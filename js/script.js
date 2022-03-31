@@ -5,6 +5,17 @@ const email = document.querySelector('#email');
 const sendBtn = document.querySelector('.send');
 const clearBtn = document.querySelector('.clear');
 const popupSend = document.querySelector('.popUpSend');
+const wrapper = document.querySelector('.wrapper');
+const openPopup = document.querySelector('.open-button');
+
+openPopup.addEventListener('click', e => {
+  popupForm();
+});
+
+const popupForm = () => {
+  wrapper.style.display = 'block';
+  openPopup.style.display = 'none';
+}
 
 
 // UKAZYWANIE BŁĘDU
