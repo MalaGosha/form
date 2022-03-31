@@ -50,7 +50,7 @@ const checkLength = (input, min) => {
 }
 
 const checkPassword = (password, password2) => {
-  if (password !=== password2) {
+  if (password.value !== password2.value) {
     showError(password2, "Ups! Hasła do siebie nie pasują!")
   }
 }
