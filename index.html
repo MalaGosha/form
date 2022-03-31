@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BillSplitter</title>
+  <title>Form</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,8 +13,48 @@
 <body>
 
 
+<div class="wrapper">
+  <form>
+    <h1>Witamy :)</h1>
 
-<script src="js/scripts.js"></script>
+    <div class="form-box">
+      <label for="userName">Nazwa użytkownika:</label>
+      <input type="text" id="userName" placeholder="Podaj nazwę użytkownika"/>
+      <p class="error-text">error</p>
+    </div>
+
+    <div class="form-box">
+      <label for="password">Hasło:</label>
+      <input type="password" id="password" placeholder="Podaj hasło"/>
+      <p class="error-text">error</p>
+    </div>
+
+    <div class="form-box">
+      <label for="password2">Powtórz hasło:</label>
+      <input type="password" id="password2" placeholder="Powtórz hasło"/>
+      <p class="error-text">error</p>
+    </div>
+
+    <div class="form-box">
+      <label for="email">Adres e-mail:</label>
+      <input type="email" id="email" placeholder="Podaj adres e-mail"/>
+      <p class="error-text">error</p>
+    </div>
+
+    <div class="control-buttons">
+      <button class="clear">Wyczyść</button>
+      <button class="send">Wyślij</button>
+    </div>
+
+    <div class="popUpSend">
+      <p>Formularz został poprawnie wysłany!</p>
+      <button class="close">Zamknij</button>
+    </div>
+
+  </form>
+</div>
+
+<script src="js/script.js"></script>
 </body>
 
 </html>
