@@ -43,10 +43,9 @@ const checkForm = inputList => {
 
 
 // WYPEŁNIENIE INPUT HASŁA
-
 const checkLength = (input, min) => {
   if (input.value.length < min) {
-    showError(input, `${input.previousElementSibling.innerText.slice(0, -1)} składa się z min. ${min} znaków.`);
+    showError(input, `${input.previousElementSibling.innerText.slice(0, -1)} powinno składać się z min. ${min} znaków.`);
   }
 }
 
@@ -58,7 +57,6 @@ const checkPassword = (password, password2) => {
 
 
 //SPRAWDZENIE MAILA
-
 const checkMail = email => {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -70,6 +68,27 @@ showError(email, 'Wprowadź prawidłowy mail')
 };
 
 
+// WYSYŁANIE FORMULARZA
+const checkErrors = () => {
+  const allInputs = document.querySelectorAll('.form-box');
+  let errorCount = 0;
+
+  allInputs.forEach(el => {
+    if (el.classList.contains('error')) {
+      errorCount++;
+    }
+  })
+
+  console.log(errorCount);
+
+  if (errorCount === 0){
+    popupSend.classList.add('show-popup');
+  }
+}
+console.log(popupSend);
+
+
+
 // PRZYCISK WYŚLIJ
 sendBtn.addEventListener('click', e => {
   e.preventDefault(); // by zapobiec działaniu wewnętrzego przycisku formluarza wyślij
@@ -79,6 +98,7 @@ sendBtn.addEventListener('click', e => {
   checkLength(password, 8);
   checkPassword(password, password2);
   checkMail(email);
+  checkErrors();
 });
 
 
@@ -88,6 +108,7 @@ clearBtn.addEventListener('click', e => {
 
   [username, password, password2, email].forEach(el => {
     el.value = '';
+    clearError(el);
   })
 });
 

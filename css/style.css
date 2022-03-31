@@ -105,7 +105,7 @@ h1 {
   align-items: center;
   flex-direction: column;
   position: absolute;
-  top: -300px;
+  bottom: -300px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 600px;
