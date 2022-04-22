@@ -102,11 +102,11 @@ console.log(popupSend);
 
 // PRZYCISK WYŚLIJ
 sendBtn.addEventListener('click', e => {
-  e.preventDefault(); // by zapobiec działaniu wewnętrzego przycisku formluarza wyślij
+  e.preventDefault(); // by zapobiec działaniu wewnętrzego przycisku formluarza wyślij i przeładowaniu strony
 
   checkForm([username, password, password2, email]);
   checkLength(username, 3);
-  checkLength(password, 8);
+  checkLength(password, 5);
   checkPassword(password, password2);
   checkMail(email);
   checkErrors();
@@ -126,7 +126,7 @@ clearBtn.addEventListener('click', e => {
 /*
 
 LUB
-const clearBtn = (e) => {
+const clearForm = (e) => {
   e.preventDefault()
 }
 clearBtn.addEventListener('click', clearForm());
